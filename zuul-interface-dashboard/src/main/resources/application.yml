@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: interface-dashboard
+
+
+
+server:
+  port: 8089
+  servlet:
+    context-path: /dashboard
+  use-forward-headers: false
+  
+eureka:
+  instance:
+      hostname: localhost
+      non-secure-port: 8761
+  client:
+    service-url:   
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port}/eureka/
+  
+
+
+
+
+
+
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG

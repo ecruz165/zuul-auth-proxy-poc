@@ -1,0 +1,7 @@
+com/yourproject/userinterface/App.class
+com/yourproject/userinterface/dashboard/StaffDashboardController.class
+com/yourproject/userinterface/ResourceServerConfig.class
+com/yourproject/userinterface/dashboard/SchoolRepDashboardController.class
+com/yourproject/userinterface/dashboard/AdminDashboardController.class
+com/yourproject/userinterface/dashboard/GuestDashboardController.class
+com/yourproject/userinterface/dashboard/ParentDashboardController.class

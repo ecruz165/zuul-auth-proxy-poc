@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: service-registry
+
+server:
+  port: 8761
+
+
+eureka:
+  instance:
+      hostname: localhost
+      non-secure-port: 8761
+  client:
+    service-url:  
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+    
+    
+  

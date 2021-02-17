@@ -1,0 +1,59 @@
+spring:
+  aop:
+    proxy-target-class: true
+  application:
+    name: api-gateway
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  use-forward-headers: true
+
+eureka:
+  instance:
+      hostname: localhost
+      non-secure-port: 8761
+  client:
+    fetch-registry: true
+    service-url: 
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port}/eureka/
+
+security:  
+  oauth2:
+    sso:
+      login-path: /login
+    client:
+      access-token-uri: http://localhost:8081/uaa/oauth/token
+      user-authorization-uri: /uaa/oauth/authorize
+
+
+
+
+
+  
+  
+  
+logging:
+  level:
+    org.springframework.cloud: TRACE
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+
+    
+zuul:
+  sensitive-headers:
+  routes:
+    uaa-service: 
+      path: /uaa/**
+      url: http://localhost:8081/
+      strip-prefix: false
+    frontend-dashboard: 
+      path: /dashboard/**
+      url: http://localhost:8089/
+      strip-prefix: false
+  add-proxy-headers: true
+  
+ 
